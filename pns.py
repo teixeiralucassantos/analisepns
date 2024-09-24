@@ -94,7 +94,7 @@ state_abbreviations = {11: 'RO', 12: 'AC', 13: 'AM', 14: 'RR', 15: 'PA', 16: 'AP
 filtered_df['sigla_estado'] = filtered_df['estado'].map(state_abbreviations)
 
 # Salvando o dataframe filtrado em um arquivo CSV
-filtered_df.to_csv(r'C:\Users\User\Documents\portfolio\pns_reduzido_2019.csv', sep='\t', encoding='utf-8')
+filtered_df.to_csv(r'C:\Users\User\Documents\portfolio\pns_2019.csv', sep='\t', encoding='utf-8')
 
 # Contagem de valores ausentes em cada coluna
 missing_values_count = filtered_df.isna().sum()
@@ -213,7 +213,7 @@ ordered_columns = ['estado', 'sigla_estado', 'estrato', 'UPA', 'ordem',
 filtered_df = filtered_df.loc[:, ordered_columns]
 
 # Salvando o dataframe organizado em um arquivo CSV
-filtered_df.to_csv(r'C:\Users\User\Documents\portfolio\pns_limpo_2019.csv', sep='\t', encoding='utf-8')
+filtered_df.to_csv(r'C:\Users\User\Documents\portfolio\pns_clean.csv', sep='\t', encoding='utf-8')
 
 # Filtrando variáveis com muitos valores ausentes
 final_df = filtered_df.loc[:, ['n_moradores', 'tipo_residencia', 'pessoas_residencia', 
@@ -231,4 +231,4 @@ final_df.dropna(inplace=True)
 missing_values_count_final = final_df.isna().sum()
 
 # Salvando o dataframe final em um arquivo CSV
-final_df.to_csv(r'C:\Users\User\Documents\portfolio\pns_r_2019.csv', sep='\t', encoding='utf-8')
+final_df.to_csv(r'C:\Users\User\Documents\portfolio\pns_final.csv', sep='\t', encoding='utf-8')
